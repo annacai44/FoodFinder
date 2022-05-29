@@ -46,46 +46,18 @@ const schedule = {
   ]
 };
 
-// const getCourseNumber = course => (
-//   course.id.slice(1)
-// );
-
 const Photo = ({ photo }) => (
-  <TouchableOpacity style={styles.postButton}>
+  <SafeAreaView style={styles.photoContainer}>
     <Image source={photo.photoPath} style={styles.image}/>
     <Text style={styles.caption}>
       {`Food: ${photo.food}\nLocation: ${photo.location}\nTime Posted: ${photo.time}\nPosted By: ${photo.username}`}
-    </Text>    
-  </TouchableOpacity>
-);
-
-const User = ({ user }) => (
-  <TouchableOpacity style={styles.bannerButton}>
-    <Text style={styles.courseText}>
-      username
     </Text>
-  </TouchableOpacity>
+  </SafeAreaView>
 );
 
-const Home = ({ user }) => (
-  <TouchableOpacity style={styles.bannerButton}>
-    <Text style={styles.courseText}>
-      Home
-    </Text>
-  </TouchableOpacity>
-);
-
-const Login = ({ user }) => (
-  <TouchableOpacity style={styles.bannerButton}>
-    <Text style={styles.courseText}>
-      Login
-    </Text>
-  </TouchableOpacity>
-);
-
-const PostButton = ({ user }) => (
-  <TouchableOpacity style={styles.bannerButton}>
-    <Text style={styles.courseText}>
+const PostButton = ({photo, view}) => (
+  <TouchableOpacity style={styles.postButton} onPress={() => view(photo)}>
+    <Text style={styles.postText}>
       Post
     </Text>
   </TouchableOpacity>
@@ -99,44 +71,25 @@ const PhotoList = ({ photos }) => (
   </ScrollView>
 );
 
-const Banner = () => (
+const Banner = ({view}) => (
   // <Text style={styles.banner}>{ title }</Text>
   <SafeAreaView style={styles.container}>
-    <User/>
-    <Text>Extra Food?</Text>
-    <Login/>
+    <Text style={styles.extraFoodText}>Extra Food?</Text>
+    <PostButton view={view}/>
   </SafeAreaView>
 );
 
-const Footer = () => (
-  // <Text style={styles.banner}>{ title }</Text>
-  <SafeAreaView style={footerStyle}>
-    <PostButton/>
-  </SafeAreaView>
-);
+const ScheduleScreen = ({navigation}) => {
 
-const ScheduleScreen = () => {
-  return (
+    const view = (post) => {
+        navigation.navigate('PostScreen');
+    };
+    return (
     <SafeAreaView>
-      <Banner />
-      <PhotoList photos={schedule.photos} />     
-      <Footer/> 
+        <Banner view={view}/>
+        <PhotoList photos={schedule.photos} />     
     </SafeAreaView>
-  );
-};
-  
-const footerStyle = {
-  display: 'flex',
-  flexDirection: 'row',
-  backgroundColor: "lightgrey",
-  fontSize: "20 pt",
-  color: "white",
-  borderTop: "1px solid #E7E7E7",
-  textAlign: "center",
-  position: "fixed",
-  width: "100%",
-  height: '35%',
-  justifyContent: 'center'
+    );
 };
 
 const styles = StyleSheet.create({
@@ -144,54 +97,46 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    // backgroundColor: '#CBC3E3'
   },
-  // banner: {
-  //   // flexDirection: 'row',
-  //   display: 'flex',
-  //   justifyContent: 'space-between',
-  //   color: '#fff',
-  //   fontSize: 90,
-  // },
   photoList: {
-    flex: 1,
-    flexDirection: 'column',
-    // flexWrap: 'wrap',
     alignItems: 'center',
-    justifyContent: 'flex-start'
-  },
-  bannerButton: {
-    borderRadius: 5,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 10,
-    height: 60,
-    minWidth: 90,
-    maxWidth: 90,
-    backgroundColor: '#66b0ff',
+    justifyContent: 'flex-start',
+    // backgroundColor: '#CBC3zE3'
   },
   postButton: {
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 10,
-    width: '100%',
-    borderColor: 'black',
-    borderWidth: '100%'
+    margin: 5,
+    height: 45,
+    width: 80,
+    backgroundColor: '#89CFF0'
   },
-  courseText:{
-    color: 'black',
-    fontSize: 15,
-    textAlign: 'center',
+  postText:{
+    fontSize: 20,
+    textAlign: 'center'
   },
   image:{
     width: 400,
-    height: 400
+    height: 400,
+    borderRadius: 22
   },
   caption:{
     fontSize: 20,
     textAlign: 'left',
     margin: 5
+  },
+  extraFoodText:{
+    marginLeft: 155,
+    fontSize: 20
+  },
+  photoContainer:{
+    borderColor: 'black',
+    borderWidth: '2px',
+    borderRadius: 25,
+    marginBottom: 10
   }
 });
 
