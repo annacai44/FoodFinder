@@ -115,7 +115,7 @@ const Footer = () => (
   </SafeAreaView>
 );
 
-const App = () => {
+const ScheduleScreen = () => {
   return (
     <SafeAreaView>
       <Banner />
@@ -195,4 +195,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default ScheduleScreen;
