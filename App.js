@@ -1,24 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ScheduleScreen from './screens/ScheduleScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.textStyle}>Welcome to my app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator> 
+        <Stack.Screen name="PostScreen"
+          component={PostScreen}
+          options={{ title: 'Course detail'}} 
+        />
+        <Stack.Screen name="ScheduleScreen"
+          component={ScheduleScreen}
+          options={{ title: 'Schedule'}} 
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#00f',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textStyle: {
-    color: '#fff',
-    fontSize: 32,
-  }
-});
+export default App;
