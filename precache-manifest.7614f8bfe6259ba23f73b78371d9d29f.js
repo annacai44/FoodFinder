@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e6b9a4656bcb0259f512fc48c638f39d",
+    "revision": "a49821d756de0bfa49fcd432c02a39a6",
     "url": "/FoodFinder/index.html"
   },
   {
-    "revision": "553f058f18b0ffebcde2",
+    "revision": "dcf3fdad38403338d366",
     "url": "/FoodFinder/static/css/main.0e60e1bc.chunk.css"
   },
   {
@@ -16,12 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/FoodFinder/static/js/2.ec61722a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "553f058f18b0ffebcde2",
-    "url": "/FoodFinder/static/js/main.a2457eb5.chunk.js"
+    "revision": "dcf3fdad38403338d366",
+    "url": "/FoodFinder/static/js/main.40d155e0.chunk.js"
   },
   {
     "revision": "4e0e34f265fae8f33b01b27ae29d9d6f",
-    "url": "/FoodFinder/static/js/main.a2457eb5.chunk.js.LICENSE.txt"
+    "url": "/FoodFinder/static/js/main.40d155e0.chunk.js.LICENSE.txt"
   },
   {
     "revision": "b77b9d6b1a8ecc44e1c8",
