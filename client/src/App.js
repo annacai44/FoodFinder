@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import Auth from "./components/Auth/Auth";
@@ -8,11 +8,13 @@ import { useDispatch } from 'react-redux';
 import { getPosts } from './actions/posts';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import useStyles from './styles';
 require('dotenv').config();
 
 const App = () => {
     const [currentId, setCurrentId] = useState(null);
     const dispatch = useDispatch();
+    const classes = useStyles();
 
     useEffect(() => {
         // ensures that for every change, we're going to get new post(s)
@@ -36,6 +38,11 @@ const App = () => {
                         </Route>
                     </Switch>
                 </Container>
+                {/* <footer className={classes.footer}>
+                    <Typography variant='h6' align='center'>
+                        Yuh get sum free food don't waste
+                    </Typography>
+                </footer> */}
         </BrowserRouter>
     </GoogleOAuthProvider>
     )

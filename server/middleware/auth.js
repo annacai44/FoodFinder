@@ -9,7 +9,7 @@ const auth = async (req, res, next) => {
     try {
         console.log(req.headers);
         const token = req.headers.authorization.split(" ")[1];
-        // 2 types of tokens: one from Google auth, one from our own
+        // 2 types of tokens: one from Google auth, one from my own
         const isCustomAuth = token.length < 500;
 
         // data we want to get from the token

@@ -4,6 +4,7 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import useStyles from './styles';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
+import { googleLogout } from '@react-oauth/google';
 
 // makes react apps multi-page
 import { Link, useHistory, useLocation } from 'react-router-dom';
@@ -14,9 +15,11 @@ const Navbar = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
-
+    const [onAuth, setOnAuth] = useState(false);
 
     const logout = () => {
+        googleLogout();
+        setOnAuth(false);
         dispatch({ type: 'LOGOUT' });
         history.push('/');
         setUser(null);
@@ -34,6 +37,7 @@ const Navbar = () => {
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
 
+
     return (
         <>
         <AppBar className={classes.appBar} color='inherit'>
@@ -49,7 +53,8 @@ const Navbar = () => {
                 </div>
             ) : (
                 // this button redirects us to a different page where we'll show the authentication
-                <Button className={classes.button} component={Link} to="/auth" variant="contained">Sign In</Button>
+                (!onAuth ? <Button className={classes.button} component={Link} to="/auth" onClick={() => setOnAuth(true)} variant="contained">Sign In</Button>
+                : <Button className={classes.button} component={Link} to="/" onClick={() => setOnAuth(false)} variant="contained">Home</Button>)
             )}
             </Toolbar>
         </AppBar>
