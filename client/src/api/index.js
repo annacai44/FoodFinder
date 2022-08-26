@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 // axios instance; we want API to make calls to users as well as posts
-const API = axios.create({ baseURL: 'http://localhost:5010'});
+const API = axios.create({ baseURL: 'https://foodfinder-nu.herokuapp.com'});
 
 // need to add something to each one of our requests
 // the callback function happens on each request, and the function happens before the request gets carried out

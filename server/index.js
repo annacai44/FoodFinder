@@ -1,5 +1,5 @@
 import express from 'express';
-import bodyParser, { json } from 'body-parser';
+import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -18,7 +18,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 
 app.get('/', (req, res) => {
-    json.send("Hello to FoodFinder API.");
+    res.send("Hello to FoodFinder API.");
 })
 
 // cluster acts as online cloud database
