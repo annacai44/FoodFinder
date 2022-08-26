@@ -3,12 +3,13 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles({
   media: {
     height: 0,
-    padding: '50%',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    // backgroundBlendMode: 'darken',
+    padding: '50%'
   },
   border: {
     border: 'solid',
+  },
+  cardContent: {
+    padding: '0',
   },
   fullHeightCard: {
     height: '100%',
@@ -40,17 +41,22 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    margin: '20px',
+    margin: '14px',
+    marginBottom: '5px'
   },
-  title: {
-    padding: '0 16px',
+  field: {
+    padding: '0 30px',
   },
   cardActions: {
-    padding: '0 16px 8px 16px',
     display: 'flex',
     justifyContent: 'space-between',
+    padding: '8px 14px 8px 20px'
   },
   likeButton: {
-    padding: '6px 0px'
+    color: 'purple',
+    fontSize: '18px'
+  },
+  heartIcon: {
+    color: 'purple'
   }
 });

@@ -8,9 +8,7 @@ import jwt_decode from 'jwt-decode';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
 import Input from './Input';
-import Icon from './icon';
 import { signin, signup } from '../../actions/auth';
-// import { GoogleLogin } from '@react-oauth/google';
 
 const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''};
 
@@ -94,18 +92,6 @@ const Auth = () => {
                         { isSignup ? 'Sign Up' : 'Sign In' }
                     </Button>
                     <GoogleLogin 
-                        // render={(renderProps) => (
-                        //     <Button 
-                        //         className={classes.googleButton} 
-                        //         color='primary' 
-                        //         fullWidth 
-                        //         onClick={renderProps.onClick} 
-                        //         disabled={renderProps.disabled} 
-                        //         startIcon={<Icon />} 
-                        //         variant='contained'>
-                        //         Google Sign In
-                        //     </Button>
-                        // )}
                         onSuccess={googleSuccess}
                         onFailure={googleFailure}
                         cookiePolicy='single_host_origin'

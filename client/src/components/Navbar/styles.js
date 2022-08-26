@@ -1,63 +1,46 @@
-// import {makeStyles} from '@material-ui/core/styles';
-
-// const useStyles = makeStyles((theme) => ({
-//     toolbar: {
-//         backgroundColor: '#684a98',
-//         align: 'center',
-//         justifyContent: 'space-between'
-//       },
-//       icon: {
-//         marginRight: '10px',
-//       },
-//       logo: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center'
-//       }
-// }));
-
-// export default useStyles;
-
 import { makeStyles } from '@material-ui/core/styles';
-import { deepPurple } from '@material-ui/core/colors';
-
 export default makeStyles((theme) => ({
   appBar: {
-    borderRadius: 15,
-    margin: '30px 0',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '10px 50px',
+    padding: '15px 30px',
+    backgroundColor: '#684a98',
+    position: 'sticky',
+    [theme.breakpoints.down('xs')]: {
+      padding: '15px 10px',
+    },
   },
   heading: {
-    color: 'rgba(0,183,255, 1)',
+    color: 'white',
     textDecoration: 'none',
+  },
+  button: {
+    backgroundColor: 'white'
+  },
+  postButton: {
+    backgroundColor: 'white',
+    marginRight: '20px',
+    [theme.breakpoints.down('xs')]: {
+      marginRight: '0px',
+      marginBottom: '10px',
+    },
   },
   image: {
     marginLeft: '15px',
   },
-  toolbar: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    width: '400px',
-  },
-  profile: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    width: '400px',
+  icon: {
+    color: 'white',
+    fontSize: '35px'
   },
   userName: {
     display: 'flex',
     alignItems: 'center',
   },
   brandContainer: {
-    display: 'flex',
-    alignItems: 'center',
+    display: 'flex'
   },
-  purple: {
-    color: theme.palette.getContrastText(deepPurple[500]),
-    backgroundColor: deepPurple[500],
-  },
+  buttonGroup: {
+    [theme.breakpoints.down('xs')]: {
+      display: 'flex',
+      flexDirection: 'column'
+    },
+  }
 }));

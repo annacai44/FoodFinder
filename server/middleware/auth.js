@@ -19,7 +19,7 @@ const auth = async (req, res, next) => {
             // get data from each specific token; gets username and id
             decodedData = jwt.verify(token, 'test');
 
-            req.userId = decodedData?.indexOf;
+            req.userId = decodedData?.id;
         } else {
             // GOOGLE OAUTH
             decodedData = jwt.decode(token);

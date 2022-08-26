@@ -11,7 +11,7 @@ router.post('/', auth, createPost);
 // see if user has permission to updatePost; if not, remove update and delete buttons on frontend
 router.patch('/:id', auth, updatePost);
 // if you call middleware (auth) before a specific action, then you can populate the request and have access to the request in the action
-router.delete('/:id', auth, deletePost);
+router.delete('/:id', deletePost);
 // need auth middleware to have specific user's id so they cannot like more than once
 // implementing only single like is on the backend
 router.patch('/:id/likePost', auth, likePost);

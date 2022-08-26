@@ -1,19 +1,13 @@
 import * as api from '../api';
-import { FETCH_ALL, CREATE, UPDATE, DELETE } from '../constants/actionTypes';
+import { FETCH_ALL, CREATE, UPDATE, DELETE, START_LOADING, END_LOADING } from '../constants/actionTypes';
 
-// Action Creators: functions that return actions
-// action is an OBJECT that has a TYPE and a PAYLOAD
-// redux thunk allows us to specify an additional arrow function; we need to use it because we're dealing with async logic
-
-// this action getPosts gets dispatched in App.js; after it gets dispatched, we immediately go to the Posts reducer
-// and handle the logic of fetching all posts
 export const getPosts = () => async (dispatch) => {
     try {
-        // we first get the response from the API, then we destructure the response to just get the data object
-        // data represents the posts
+        dispatch({ type: START_LOADING });
         const { data } = await api.fetchPosts();
         // dispatch an action from the data from the backend
         dispatch({ type: FETCH_ALL, payload: data });
+        dispatch({ type: END_LOADING });
     } catch (err) {
         console.log(err);
     }
@@ -21,8 +15,10 @@ export const getPosts = () => async (dispatch) => {
 
 export const createPost = (post) => async (dispatch) => {
     try {
+        dispatch({ type: START_LOADING });
         const { data } = await api.createPost(post);
         dispatch({ type: CREATE, payload: data });
+        dispatch({ type: END_LOADING });
     } catch (err) {
         console.log(err);
     }
@@ -30,8 +26,10 @@ export const createPost = (post) => async (dispatch) => {
 
 export const updatePost = (id, post) => async (dispatch) => {
     try {
-       const { data } = await api.updatePost(id, post);
-       dispatch({ type: UPDATE, payload: data });
+        dispatch({ type: START_LOADING });
+        const { data } = await api.updatePost(id, post);
+        dispatch({ type: UPDATE, payload: data });
+        dispatch({ type: END_LOADING });
     } catch (err) {
         console.log(err);
     }
