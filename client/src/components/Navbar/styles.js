@@ -12,8 +12,17 @@ export default makeStyles((theme) => ({
     color: 'white',
     textDecoration: 'none',
   },
+  banner: {
+    color: 'white'
+  },
   button: {
     backgroundColor: 'white'
+  },
+  signInButton: {
+    backgroundColor: 'white',
+    [theme.breakpoints.up('md')]: {
+      marginLeft: '115px'
+    },
   },
   postButton: {
     backgroundColor: 'white',

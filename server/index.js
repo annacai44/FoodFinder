@@ -1,5 +1,5 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import bodyParser, { json } from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
@@ -16,6 +16,10 @@ app.use(cors());
 
 // if the URL has /posts at the end, it will go into postRoutes
 app.use('/posts', postRoutes);
+
+app.get('/', (req, res) => {
+    json.send("Hello to FoodFinder API.");
+})
 
 // cluster acts as online cloud database
 const PORT = process.env.PORT || 5010;
