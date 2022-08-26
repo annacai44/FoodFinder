@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://annacai44.github.io/FoodFinder",
-  "proxy": "http://annacai44.github.io/FoodFinder",
   "dependencies": {
     "@material-ui/core": "^4.9.10",
     "@material-ui/icons": "^4.9.1",

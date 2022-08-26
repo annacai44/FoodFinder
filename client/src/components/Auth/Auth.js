@@ -25,7 +25,7 @@ const Auth = () => {
         try {
             dispatch({ type: 'AUTH', data: { result, token } });
             // history belongs to react-router-dom
-            history.push('/');
+            history.push('/FoodFinder');
         } catch (err) {
             console.log(err);
         }

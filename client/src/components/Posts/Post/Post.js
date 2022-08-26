@@ -35,7 +35,7 @@ const Post = ({ post, setCurrentId }) => {
 
     const editPost = () => {
         setCurrentId(post._id);
-        history.push('/post');
+        history.push('/FoodFinder/post');
     }
 
     return (

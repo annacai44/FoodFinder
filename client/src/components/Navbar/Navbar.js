@@ -23,7 +23,7 @@ const Navbar = () => {
         googleLogout();
         setOnAuth(false);
         dispatch({ type: 'LOGOUT' });
-        history.push('/');
+        history.push('/FoodFinder');
         setUser(null);
     }
 

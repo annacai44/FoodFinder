@@ -39,7 +39,7 @@ const Form = ({ currentId, setCurrentId }) => {
             dispatch(createPost(postData));
         }
         clear();
-        history.push('/');
+        history.push('/FoodFinder');
     }
 
     return (

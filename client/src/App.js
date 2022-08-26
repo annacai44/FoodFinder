@@ -24,13 +24,13 @@ const App = () => {
                 <Navbar />
                 <Container maxwidth="lg">
                     <Switch>
-                        <Route path="/" exact>
+                        <Route path="/FoodFinder" exact>
                             <Home setCurrentId={setCurrentId}/>
                         </Route>
-                        <Route path="/auth" exact>
+                        <Route path="/FoodFinder/auth" exact>
                             <Auth />
                         </Route>
-                        <Route path="/post" exact>
+                        <Route path="/FoodFinder/post" exact>
                             <Form currentId={currentId} setCurrentId={setCurrentId}/>
                         </Route>
                     </Switch>
