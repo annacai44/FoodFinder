@@ -14,7 +14,6 @@ API.interceptors.request.use((req) => {
         // add authorization to each and every request
         req.headers.authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;
     }
-
     return req;
 });
 
