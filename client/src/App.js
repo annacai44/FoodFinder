@@ -9,7 +9,6 @@ import { getPosts } from './actions/posts';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import useStyles from './styles';
-require('dotenv').config();
 
 const App = () => {
     const [currentId, setCurrentId] = useState(null);
@@ -22,7 +21,7 @@ const App = () => {
     }, [dispatch]);
 
     return (
-    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId='459151855029-k0f07ac9ad193qhq61db5e5ro63qc3bh.apps.googleusercontent.com'>
         <BrowserRouter>
                 <Navbar />
                 <Container maxwidth="lg">
