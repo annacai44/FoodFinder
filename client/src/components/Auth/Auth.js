@@ -1,5 +1,5 @@
-import React, { useState }from 'react';
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
+import React from 'react';
+import { Avatar, Paper, Typography, Container } from '@material-ui/core';
 import { GoogleLogin } from '@react-oauth/google';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -7,8 +7,6 @@ import jwt_decode from 'jwt-decode';
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import useStyles from './styles';
-
-const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: ''};
 
 const Auth = () => {
     const classes = useStyles();

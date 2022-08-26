@@ -4,7 +4,6 @@ import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@
 import moment from 'moment';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import DeleteIcon from '@material-ui/icons/Delete';
 import { useDispatch } from 'react-redux';
 import { deletePost, likePost } from "../../../actions/posts";
 import { useHistory } from 'react-router-dom';
