@@ -45,7 +45,7 @@ const Navbar = () => {
         <AppBar className={classes.appBar} color='inherit'>
             <Toolbar style={{display: 'flex', justifyContent: 'space-between'}}>
             <div className={classes.brandContainer}>
-                <Typography component={Link} to="/" className={classes.heading} variant="h4" align="center">FoodFinder</Typography>
+                <Typography component={Link} to="/FoodFinder" className={classes.heading} variant="h4" align="center">FoodFinder</Typography>
                 <FastfoodIcon className={classes.icon}/>
             </div>
             {matches ? <Typography variant='h6' className={classes.banner}>Share leftover food on campus by posting here!</Typography> : undefined}
