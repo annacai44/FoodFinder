@@ -51,13 +51,13 @@ const Navbar = () => {
             {matches ? <Typography variant='h6' className={classes.banner}>Share leftover food on campus by posting here!</Typography> : undefined}
             {user ? (
                 <div className={classes.buttonGroup}>
-                    <Button className={classes.postButton} component={Link} to="/post" variant='contained'>Post</Button>
+                    <Button className={classes.postButton} component={Link} to="/FoodFinder/post" variant='contained'>Post</Button>
                     <Button variant='contained' className={classes.button} onClick={logout}>Logout</Button>
                 </div>
             ) : (
                 // this button redirects us to a different page where we'll show the authentication
-                (!onAuth ? <Button className={classes.signInButton} component={Link} to="/auth" onClick={() => setOnAuth(true)} variant="contained">Sign In</Button>
-                : <Button className={classes.button} component={Link} to="/" onClick={() => setOnAuth(false)} variant="contained">Home</Button>)
+                (!onAuth ? <Button className={classes.signInButton} component={Link} to="/FoodFinder/auth" onClick={() => setOnAuth(true)} variant="contained">Sign In</Button>
+                : <Button className={classes.button} component={Link} to="/FoodFinder" onClick={() => setOnAuth(false)} variant="contained">Home</Button>)
             )}
             </Toolbar>
         </AppBar>
