@@ -2,7 +2,7 @@
 // axios performs HTTP requests on a particular URL; axios is promise-based
 import axios from 'axios';
 
-// axios instance; we want API to make calls to users as well as posts
+// axios instance; we want API to make calls to /posts
 const API = axios.create({ baseURL: 'https://foodfinder-nu.herokuapp.com'});
 
 // need to add something to each one of our requests
