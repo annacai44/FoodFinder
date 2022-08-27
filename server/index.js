@@ -10,9 +10,9 @@ dotenv.config();
 
 // set up bodyParser to properly send our requests
 // app.use allows us to use any middleware we want
-app.use(bodyParser.json({ limit: '30mb', extended: true }))
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
+app.use(bodyParser.json({ limit: '30mb', extended: true }));
+app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 
 // if the URL has /posts at the end, it will go into postRoutes
 app.use('/posts', postRoutes);
