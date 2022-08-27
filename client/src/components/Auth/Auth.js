@@ -43,7 +43,7 @@ const Auth = () => {
                     <LockOutlinedIcon/>
                 </Avatar>
                 <Typography variant='h6' align='center'>
-                    Must sign in with Northwestern&nbsp;email.
+                    Must sign in with Northwestern email to post and edit posts on FoodFinder.
                 </Typography>
                     <GoogleLogin 
                         onSuccess={googleSuccess}

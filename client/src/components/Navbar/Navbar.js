@@ -20,11 +20,11 @@ const Navbar = () => {
     const matches = useMediaQuery('(min-width:900px)');
 
     const logout = () => {
+        setUser(null);
         googleLogout();
         setOnAuth(false);
         dispatch({ type: 'LOGOUT' });
-        history.push('/FoodFinder');
-        setUser(null);
+        window.location.reload();
     }
 
     useEffect(() => {
@@ -38,6 +38,7 @@ const Navbar = () => {
 
         setUser(JSON.parse(localStorage.getItem('profile')));
     }, [location]);
+
 
 
     return (
