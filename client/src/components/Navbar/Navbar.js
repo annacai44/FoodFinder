@@ -53,12 +53,12 @@ const Navbar = () => {
             {user ? (
                 <div className={classes.buttonGroup}>
                     <Button className={classes.postButton} component={Link} to="/FoodFinder/post" variant='contained'>Post</Button>
-                    <Button variant='contained' className={classes.button} onClick={logout}>Logout</Button>
+                    <Button variant='contained' style={{backgroundColor: 'white'}} onClick={logout}>Logout</Button>
                 </div>
             ) : (
                 // this button redirects us to a different page where we'll show the authentication
                 (!onAuth ? <Button className={classes.signInButton} component={Link} to="/FoodFinder/auth" onClick={() => setOnAuth(true)} variant="contained">Sign In</Button>
-                : <Button className={classes.button} component={Link} to="/FoodFinder" onClick={() => setOnAuth(false)} variant="contained">Home</Button>)
+                : <Button className={classes.homeButton} component={Link} to="/FoodFinder" onClick={() => setOnAuth(false)} variant="contained">Home</Button>)
             )}
             </Toolbar>
         </AppBar>

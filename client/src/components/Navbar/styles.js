@@ -15,13 +15,16 @@ export default makeStyles((theme) => ({
   banner: {
     color: 'white'
   },
-  button: {
-    backgroundColor: 'white'
-  },
   signInButton: {
     backgroundColor: 'white',
     [theme.breakpoints.up('md')]: {
       marginLeft: '115px'
+    },
+  },
+  homeButton: {
+    backgroundColor: 'white',
+    [theme.breakpoints.up('md')]: {
+      marginLeft: '125px'
     },
   },
   postButton: {

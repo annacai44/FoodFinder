@@ -35,11 +35,6 @@ const App = () => {
                         </Route>
                     </Switch>
                 </Container>
-                {/* <footer className={classes.footer}>
-                    <Typography variant='h6' align='center'>
-                        Yuh get sum free food don't waste
-                    </Typography>
-                </footer> */}
         </BrowserRouter>
     </GoogleOAuthProvider>
     )

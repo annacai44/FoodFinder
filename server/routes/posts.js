@@ -5,7 +5,6 @@ import auth from '../middleware/auth.js';
 const router = express.Router();
 
 router.get('/', getPosts);
-
 // to create a post, you need to have an id. auth middleware verifies that you're logged in
 router.post('/', auth, createPost);
 // see if user has permission to updatePost; if not, remove update and delete buttons on frontend
