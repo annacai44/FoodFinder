@@ -27,11 +27,11 @@ const Post = ({ post, setCurrentId }) => {
         return <><FavoriteBorderIcon fontSize="medium" className={classes.heartIcon} />&nbsp;Like</>;
     };
 
-    const postTimeDifference = moment().diff(moment(post.createdAt), 'hours');
-    if (postTimeDifference >= 24) {
-        dispatch(deletePost(post._id));
-        return null;
-    }
+    // const postTimeDifference = moment().diff(moment(post.createdAt), 'hours');
+    // if (postTimeDifference >= 24) {
+    //     dispatch(deletePost(post._id));
+    //     return null;
+    // }
 
     const editPost = () => {
         setCurrentId(post._id);
