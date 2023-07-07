@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+
+// gives us access to a real model
 import PostMessage from "../models/postMessage.js";
 
 export const getPosts = async (req, res) => {

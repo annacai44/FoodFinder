@@ -3,7 +3,6 @@
 import axios from 'axios';
 
 // axios instance; we want API to make calls to /posts
-// http://localhost:5010
 const API = axios.create({ baseURL: 'https://foodfinder-nu.herokuapp.com'});
 
 // need to add something to each one of our requests
